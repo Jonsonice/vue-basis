@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>demo1</title>
+  <style>
+    .item {
+      color: brown;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    {{msg}}
+    <div>
+      <input type="text" v-model="info">
+      <button @click="handleClick">添加</button>
+    </div>
+    <ul>
+      <todo-item v-for="item in list" :key="item" :item="item"></todo-item>
+    </ul>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.9/dist/vue.js"></script>
+  <script>
+    //注册全局组件
+    Vue.component('todo-item',{
+      props: ['item'],
+      template: `
+        <li class="item">{{item}}</li>
+      `
+    })
+
+    //Vue 实例化
+    new Vue({
+      el: '#app',
+      data () {
+        return {
+          msg: 'hello msg',
+          info: '',
+          list: [],
+        }
+      },
+      methods: {
+        handleClick(){
+          console.log(this.info);
+          this.list.push(this.info)
+          this.info = ''
+        }
+      },
+    })
+  </script>
+</body>
+</html>
