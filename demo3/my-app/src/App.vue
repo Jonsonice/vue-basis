@@ -15,16 +15,20 @@
 
     <hr>
     <Directives></Directives>
+    <hr>
+    <CustomerDirectives></CustomerDirectives>
   </div>
 </template>
 <script>
-import PersonalInfo from "./components/PersonalInfo";
+import PersonalInfo from "./components/PersonalInfo"
 import Directives from "./components/Directives"
+import CustomerDirectives from "./components/CustomerDirectives"
 
 export default {
   components: {
     PersonalInfo,
-    Directives
+    Directives,
+    CustomerDirectives
   },
   data() {
     return {
