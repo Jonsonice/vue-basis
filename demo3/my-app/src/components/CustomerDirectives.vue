@@ -13,22 +13,22 @@ export default {
   directives: {
     appendText: {
       bind() {
-        console.log("bind");
+        window.console.log("bind");
       },
       inserted(el, binding) {
         el.appendChild(document.createTextNode(binding.value));
-        console.log("inserted", el, binding);
+        window.console.log("inserted", el, binding);
       },
       update() {
-        console.log("update");
+        window.console.log("update");
       },
       componentUpdated(el, binding) {
         el.removeChild(el.childNodes[el.childNodes.length - 1]);
         el.appendChild(document.createTextNode(binding.value));
-        console.log("componentUpdated");
+        window.console.log("componentUpdated");
       },
       unbind() {
-        console.log("unbind");
+        window.console.log("unbind");
       }
     }
   },
