@@ -12,13 +12,19 @@
     phoneInfo： {{ phoneInfo }}
     <br />
     zipCode： {{ zipCode }}
+
+    <hr>
+    <Directives></Directives>
   </div>
 </template>
 <script>
 import PersonalInfo from "./components/PersonalInfo";
+import Directives from "./components/Directives"
+
 export default {
   components: {
-    PersonalInfo
+    PersonalInfo,
+    Directives
   },
   data() {
     return {
@@ -31,3 +37,8 @@ export default {
   }
 };
 </script>
+<style>
+  * {
+    text-align: center;
+  }
+</style>
